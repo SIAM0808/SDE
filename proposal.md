@@ -237,7 +237,79 @@ stateDiagram-v2
 ```
 
 #### v. ER Diagrams
-*(To be added)*
+```mermaid
+erDiagram
+    messes ||--o{ members : "has"
+    messes ||--o{ messjoinrequests : "receives"
+    members ||--o{ messjoinrequests : "sends"
+    members ||--o{ meals : "orders"
+    messes ||--o{ expenses : "has"
+    members ||--o{ expenses : "RecordedBy/MemberId"
+    messes ||--o{ memberpayments : "receives"
+    members ||--o{ memberpayments : "pays/RecordedBy"
+    messes ||--o{ membercashtransfers : "gives"
+    members ||--o{ membercashtransfers : "receives/RecordedBy"
+    
+    messes {
+        int Id PK
+        string Name
+        string MessCode
+        int AdminMemberId FK
+    }
+    members {
+        int Id PK
+        string Name
+        string Phone
+        string Email
+        string PasswordHash
+        datetime JoinDate
+        boolean IsActive
+        int MessId FK
+    }
+    meals {
+        int Id PK
+        int MemberId FK
+        datetime MealDate
+        int Breakfast
+        int Lunch
+        int Dinner
+    }
+    expenses {
+        int Id PK
+        int MessId FK
+        int MemberId FK "Optional"
+        string Description
+        string Category
+        decimal Amount
+        datetime ExpenseDate
+        int RecordedBy FK
+    }
+    memberpayments {
+        int Id PK
+        int MessId FK
+        int MemberId FK
+        decimal Amount
+        datetime PaymentDate
+        int RecordedBy FK
+    }
+    membercashtransfers {
+        int Id PK
+        int MessId FK
+        int MemberId FK
+        decimal Amount
+        datetime TransferDate
+        int RecordedBy FK
+        string Status
+        datetime ApprovedAt "Optional"
+    }
+    messjoinrequests {
+        int Id PK
+        int MessId FK
+        int MemberId FK
+        string Status
+        datetime RequestDate
+    }
+```
 
 #### vi. Schema Diagrams
 *(To be added)*
