@@ -1,0 +1,6 @@
+@MessManagementSystem.Api_HostAddress = http://localhost:5279
+
+GET {{MessManagementSystem.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

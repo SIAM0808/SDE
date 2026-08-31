@@ -1,0 +1,168 @@
+### Get member by ID
+GET http://localhost:5279/api/members
+
+### Create member
+POST http://localhost:5279/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "fahad",
+  "phone": "01700000000",
+  "email": "siam@example.com",
+  "password": "12345678"
+}
+
+
+###
+# POST http://localhost:5279/api/auth/login
+POST http://localhost:5279/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "rahim234@example.com",
+  "password": "12345678"
+}
+
+### Update member
+PUT http://localhost:5279/api/members/2
+Content-Type: application/json
+
+{
+  "name": "Karim Hasan Updated",
+  "phone": "01899999999",
+  "email": "karim.updated@example.com"
+}
+
+
+### Delete member
+DELETE http://localhost:5279/api/members/3
+
+### Current member without token
+
+GET http://localhost:5279/api/members/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4NzgyMDg2MiwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.ZJNxXF1cS2gvVf2rf0E1jEQQeRQK6_7wZM6cT0tvEXk
+
+###
+POST http://localhost:5279/api/mess
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjYiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoic2lhbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImZhaGFkMjM0QGV4YW1wbGUuY29tIiwiZXhwIjoxNzg3ODIxMDM4LCJpc3MiOiJNZXNzTWFuYWdlbWVudFN5c3RlbS5BcGkiLCJhdWQiOiJNZXNzTWFuYWdlbWVudFN5c3RlbS5DbGllbnQifQ.86Jn2oF56qdu_D2BAI0XZaPpv0VC4ND3hx0hNXPu9HY
+Content-Type: application/json
+
+{
+  "name": "ANY"
+}
+
+
+### Send Join Request
+
+POST http://localhost:5279/api/mess/join
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjciLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZmFoYWQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJzaWFtQGV4YW1wbGUuY29tIiwiZXhwIjoxNzg3ODIzMTA3LCJpc3MiOiJNZXNzTWFuYWdlbWVudFN5c3RlbS5BcGkiLCJhdWQiOiJNZXNzTWFuYWdlbWVudFN5c3RlbS5DbGllbnQifQ.sZXahJ8xixAZMSZPN1AgMlT-xM-caCTAxJyks23zmIQ
+Content-Type: application/json
+
+{
+  "messId": 1
+}
+
+### Get mess details
+GET http://localhost:5279/api/mess/search?query=Mess
+
+
+###
+GET http://localhost:5279/api/mess/1/join-requests
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE1NTU2NCwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.fZodC4XyzU0ZKptP2S9BPjhApLnC7ppJFS9Xx8MtS0E
+
+
+### Approve join request
+
+POST http://localhost:5279/api/mess/1/join-requests/approve
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE1NjU1MCwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.eEn8AbVpMYaktPkZ2_rZP1AGtOkCC8hssJnlVnP_Q_Q
+Content-Type: application/json
+
+{
+  "requestId": 1
+}
+
+### Reject join request
+
+POST http://localhost:5279/api/mess/1/join-requests/reject
+Authorization: Bearer YOUR_ADMIN_TOKEN
+Content-Type: application/json
+
+{
+  "requestId": 2
+}
+
+###
+POST http://localhost:5279/api/Meal
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE3MjA5MSwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.WBbdLBg-1_CMksvCHUSd3G0BvGYVhFRTK59A-HpEDgY
+Content-Type: application/json
+
+{
+  "breakfast": 2,
+  "lunch": 0,
+  "dinner": 1
+}
+
+###
+### Get my meals
+GET http://localhost:5279/api/Meal
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE3MjA5MSwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.WBbdLBg-1_CMksvCHUSd3G0BvGYVhFRTK59A-HpEDgY
+
+
+
+###
+POST http://localhost:5279/api/Expense/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE3Mzg3NiwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.-qjZpci1H6btvy7_H0kin9E6lV8AiNMIB7iM9WgUPy8
+Content-Type: application/json
+
+{
+  "description": "Rice",
+  "category": "Food",
+  "amount": 5000,
+  "expenseDate": "2026-08-31"
+}
+
+
+
+### admin pasyment test
+
+POST http://localhost:5279/api/MemberPayment/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE3NDQ4OCwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.Z3RHqg50CJ5QT2GQeyIb0QNyEuByniOprRJ0PBb8dTw
+Content-Type: application/json
+
+{
+  "memberId": 7,
+  "amount": 10000,
+  "paymentDate": "2026-08-31"
+}
+
+
+###
+POST http://localhost:5279/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "rahim234@example.com",
+  "password": "12345678"
+}
+
+
+###member ke taka payment test
+POST http://localhost:5279/api/MemberCashTransfer/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE3NTAyMSwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.sx-UjnD807p7Fu3HqIwwr1fNox5WSrtnu6NoasKdWE8
+Content-Type: application/json
+
+{
+  "memberId": 5,
+  "amount": 500,
+  "transferDate": "2026-08-31"
+}
+
+
+### verify payment receive by member
+GET http://localhost:5279/api/MemberCashTransfer/my-pending
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE3NTI3NywiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.QoabCoXEo6UG4CiLTyWz5o9GOl_k_YQjQXaHsxC3PR4
+
+
+### financial summary
+GET http://localhost:5279/api/Financial/member-summary?messId=1&memberId=5&year=2026&month=8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUmFoaW0iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJyYWhpbTIzNEBleGFtcGxlLmNvbSIsImV4cCI6MTc4ODE3NjYxOCwiaXNzIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQXBpIiwiYXVkIjoiTWVzc01hbmFnZW1lbnRTeXN0ZW0uQ2xpZW50In0.DttBOJ3-gN9gJ8iAaUBv-GSBumuDJmPhgB46SPdRwOs
